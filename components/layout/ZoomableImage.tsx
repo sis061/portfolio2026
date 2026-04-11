@@ -23,6 +23,7 @@ type ZoomableImageProps = {
   alt?: string;
   width?: number;
   height?: number;
+  loading?: "eager" | "lazy";
   onError?: () => void;
 };
 
@@ -34,6 +35,7 @@ export function ZoomableImage({
   width,
   height,
   onError,
+  loading = "lazy",
   ...rest
 }: ZoomableImageProps) {
   // const [hasError, setHasError] = useState(false);
@@ -62,14 +64,13 @@ export function ZoomableImage({
         alt={alt ?? ""}
         width={width}
         height={height}
+        loading={loading}
         onClick={() => zoomable && setIsZoomed(true)}
         // onError={(e) => {
         //   setHasError(true);
         //   onError?.(e);
         // }}
-        className={`${zoomable ? "cursor-zoom-in" : ""} ${
-          className ?? ""
-        } aspect-square`}
+        className={`${zoomable ? "cursor-zoom-in" : ""} ${className ?? ""} `}
         {...rest}
       />
 

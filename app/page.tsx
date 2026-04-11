@@ -50,14 +50,6 @@ const EXPERIENCE = [
             조건에 따라 입력 항목이 분기되는 <b>동적 폼 구조를 설계</b>하고 각
             요소를 <b>컴포넌트 단위로 분리하여 재사용</b> 가능하도록
             구현했습니다.
-            <ZoomableImage
-              zoomable
-              className="rounded-md overflow-hidden border border-pilltime-violet/50 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-              src={"/images/chin_001.webp"}
-              alt="chin_001"
-              width={120}
-              height={120}
-            />
           </>,
           <>
             개발 과정에서는 기획 요구사항이 지속적으로 변경되는 상황이 있었고,
@@ -389,12 +381,12 @@ export default function Home() {
           </div>
 
           {/* 개발 경력 */}
-          <div className=" flex flex-col gap-8 w-full">
+          <div className="flex flex-col gap-8 w-full">
             <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
               개발 경력
             </h3>
 
-            <div className="flex flex-col lg:flex-row gap-16 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light  w-full !-mt-2">
+            <div className=" flex flex-col lg:flex-row gap-16 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light  w-full !-mt-2">
               <div className="w-full lg:w-1/3 !min-w-64 flex-grow flex flex-col gap-4">
                 <h4 className="text-2xl lg:text-3xl font-semibold">
                   (주) CIC커뮤니티
@@ -407,6 +399,74 @@ export default function Home() {
                   <span className="text-sm !text-black/50">
                     2024.03 - 2024.10
                   </span>
+                  <div className="pt-15 flex flex-wrap gap-4">
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/chin_001.webp"}
+                      alt="chin_001"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/chin_002.webp"}
+                      alt="chin_002"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/chin_003.webp"}
+                      alt="chin_003"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/chin_004.webp"}
+                      alt="chin_004"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/chin_005.webp"}
+                      alt="chin_005"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="mt-24 rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/ping_001.gif"}
+                      alt="ping_001"
+                      loading="eager"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/ping_002.gif"}
+                      alt="ping_002"
+                      loading="eager"
+                      width={280}
+                      height={300}
+                    />
+                    <ZoomableImage
+                      zoomable
+                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                      src={"/images/ping_003.webp"}
+                      alt="ping_003"
+                      width={280}
+                      height={300}
+                    />
+                  </div>
                 </div>
               </div>
               <div className="w-full lg:w-2/3 flex flex-col gap-20">
@@ -418,31 +478,28 @@ export default function Home() {
                           {e.title}
                         </h5>
                         <div className="flex items-center gap-4">
-                          <Link
-                            href={!!e.link ? e.link : "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                          >
-                            {!!e.link ? (
+                          {!!e.link ? (
+                            <Link
+                              href={e.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
+                            >
                               <div className="flex items-center gap-1">
                                 <Link2 size={20} />
                                 <span className="text-sm !text-black/75 pt-0.5">
                                   바로가기
                                 </span>
                               </div>
-                            ) : (
-                              <div className="flex items-center gap-1">
-                                <Link2Off
-                                  size={20}
-                                  className="pointer-events-none"
-                                />
-                                <span className="text-sm !text-red-500 hover:cursor-not-allowed pt-0.5">
-                                  서비스 종료
-                                </span>
-                              </div>
-                            )}
-                          </Link>
+                            </Link>
+                          ) : (
+                            <div className="flex items-center gap-1 text-red-500 cursor-not-allowed opacity-70">
+                              <Link2Off size={20} />
+                              <span className="text-sm pt-0.5">
+                                서비스 종료
+                              </span>
+                            </div>
+                          )}
                         </div>
                       </div>
                       <span className="!text-base !text-black/50">
@@ -500,31 +557,26 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="flex items-center gap-4">
-                      <Link
-                        href={!!p.link ? p.link : "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                      >
-                        {!!p.link ? (
+                      {!!p.link ? (
+                        <Link
+                          href={p.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
+                        >
                           <div className="flex items-center gap-1">
                             <Link2 size={20} />
                             <span className="text-sm !text-black/75 pt-0.5">
                               바로가기
                             </span>
                           </div>
-                        ) : (
-                          <div className="flex items-center gap-1">
-                            <Link2Off
-                              size={20}
-                              className="pointer-events-none"
-                            />
-                            <span className="text-sm !text-red-500 hover:cursor-not-allowed pt-0.5">
-                              서비스 종료
-                            </span>
-                          </div>
-                        )}
-                      </Link>
+                        </Link>
+                      ) : (
+                        <div className="flex items-center gap-1 text-red-500 cursor-not-allowed opacity-70">
+                          <Link2Off size={20} />
+                          <span className="text-sm pt-0.5">서비스 종료</span>
+                        </div>
+                      )}
                       <Link
                         target="_blank"
                         rel="noopener noreferrer"
