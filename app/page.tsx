@@ -242,7 +242,7 @@ const PROJECT = [
               href={"https://ohmypet.vercel.app"}
               target="_blank"
               rel="noopener noreferrer"
-              className="!underline !text-[#02C951]"
+              className="!underline !text-[#02C951] font-bold"
             >
               ‘아맞다밥!’
             </Link>
@@ -385,7 +385,7 @@ export default function Home() {
                 고객의 요구사항을 한 줄기로 엮어 끊기지 않는 화면으로
                 만들어냅니다.
               </h2>
-              <h2>
+              <h2 className="pr-4">
                 다양한 경험에서의 소통을 바탕으로, 서로 다른 생각과 조건을
                 조율해 하나의 결과로 이어냅니다.
               </h2>
@@ -421,46 +421,20 @@ export default function Home() {
                       이미지를 눌러 확대할 수 있습니다.
                     </span>
                   </div>
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/chin_001.webp"}
-                    alt="chin_001"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/chin_002.webp"}
-                    alt="chin_002"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/chin_003.webp"}
-                    alt="chin_003"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/chin_004.webp"}
-                    alt="chin_004"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/chin_005.webp"}
-                    alt="chin_005"
-                    width={280}
-                    height={300}
-                  />
+                  {Array.from({ length: 5 }, (_, i) => {
+                    const index = i + 1;
+                    return (
+                      <ZoomableImage
+                        key={index}
+                        zoomable
+                        className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                        src={`/images/chin_00${index}.webp`}
+                        alt={`chin_00${index}`}
+                        width={280}
+                        height={300}
+                      />
+                    );
+                  })}
                 </div>
 
                 <div className="space-y-8 w-full lg:!w-2/3 lg:-mt-51.5">
