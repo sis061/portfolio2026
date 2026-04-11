@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  /* padding: 0;
+  margin: 0; */
+  scrollbar-width: none;
+  font-family:
+    "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important;
+  color: black;
+  background-color: "#fff";
+}
+
+#root {
+  position: relative;
+}
+html,
+body {
+  max-width: 100vw;
+  background-color: #fafafa;
+  @apply font-sans;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrapper {
+  @apply max-w-full md:max-w-screen-lg lg:max-w-screen-xl overflow-x-hidden !mx-auto w-full;
+}
+
+.inner {
+  @apply basis-full max-w-full sm:basis-5/6 sm:max-w-5/6 md:basis-3/4 md:max-w-3/4 lg:basis-2/3 lg:max-w-2/3;
+}
