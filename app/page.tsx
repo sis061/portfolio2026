@@ -1,4 +1,4 @@
-import { Mail, Phone, Link2, Link2Off } from "lucide-react";
+import { Mail, Phone, Link2, Link2Off, ZoomIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -160,6 +160,12 @@ const PROJECT = [
       "약 복용 여부를 자주 잊는 문제를 해결하기 위해 실제 사용자를 대상으로 개발한 웹 서비스입니다.",
     link: "https://ohmypill.vercel.app",
     github: "https://github.com/sis061/pilltime",
+    imgSrc: [
+      "ohmypill_001.webp",
+      "ohmypill_004.webp",
+      "ohmypill_006.webp",
+      "ohmypet_001.webp",
+    ],
     skills: [
       "React",
       "Next.js",
@@ -272,6 +278,12 @@ const PROJECT = [
       "아티스트의 디스코그래피 및 다양한 콘텐츠를 한눈에 보여주기 위해 제작한 웹 서비스입니다.",
     link: "https://grsbh.com",
     github: "https://github.com/sis061/gasolinerainbow",
+    imgSrc: [
+      "grsbh_001.gif",
+      "grsbh_002.gif",
+      "grsbh_003.webp",
+      "grsbh_004.webp",
+    ],
     skills: [
       "React",
       "TypeScript",
@@ -386,8 +398,8 @@ export default function Home() {
               개발 경력
             </h3>
 
-            <div className=" flex flex-col lg:flex-row gap-16 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light  w-full !-mt-2">
-              <div className="w-full lg:w-1/3 !min-w-64 flex-grow flex flex-col gap-4">
+            <div className="flex flex-col gap-20 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full !-mt-2">
+              <div className="w-full lg:w-1/3 !min-w-64 flex-grow flex flex-col gap-4 ">
                 <h4 className="text-2xl lg:text-3xl font-semibold">
                   (주) CIC커뮤니티
                 </h4>
@@ -399,142 +411,186 @@ export default function Home() {
                   <span className="text-sm !text-black/50">
                     2024.03 - 2024.10
                   </span>
-                  <div className="pt-15 flex flex-wrap gap-4">
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/chin_001.webp"}
-                      alt="chin_001"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/chin_002.webp"}
-                      alt="chin_002"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/chin_003.webp"}
-                      alt="chin_003"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/chin_004.webp"}
-                      alt="chin_004"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/chin_005.webp"}
-                      alt="chin_005"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="mt-24 rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/ping_001.gif"}
-                      alt="ping_001"
-                      loading="eager"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/ping_002.gif"}
-                      alt="ping_002"
-                      loading="eager"
-                      width={280}
-                      height={300}
-                    />
-                    <ZoomableImage
-                      zoomable
-                      className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                      src={"/images/ping_003.webp"}
-                      alt="ping_003"
-                      width={280}
-                      height={300}
-                    />
-                  </div>
                 </div>
               </div>
-              <div className="w-full lg:w-2/3 flex flex-col gap-20">
-                {EXPERIENCE.map((e) => (
-                  <div key={e.title} className="space-y-8">
-                    <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
+                <div className="flex flex-wrap items-center !min-w-64 lg:items-start justify-center gap-4 w-full h-full lg:w-1/3 ">
+                  <div className="w-full flex items-center gap-2">
+                    <ZoomIn size={16} className="animate-pulse" />
+                    <span className="text-sm font-light">
+                      이미지를 눌러 확대할 수 있습니다.
+                    </span>
+                  </div>
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/chin_001.webp"}
+                    alt="chin_001"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/chin_002.webp"}
+                    alt="chin_002"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/chin_003.webp"}
+                    alt="chin_003"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/chin_004.webp"}
+                    alt="chin_004"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/chin_005.webp"}
+                    alt="chin_005"
+                    width={280}
+                    height={300}
+                  />
+                </div>
+
+                <div className="space-y-8 w-full lg:!w-2/3 lg:-mt-51.5">
+                  <div className="w-full flex flex-col gap-2">
+                    <div className="flex items-center gap-4">
+                      <h5 className="text-2xl lg:text-3xl font-semibold">
+                        Channel-iN
+                      </h5>
                       <div className="flex items-center gap-4">
-                        <h5 className="text-2xl lg:text-3xl font-semibold">
-                          {e.title}
-                        </h5>
-                        <div className="flex items-center gap-4">
-                          {!!e.link ? (
-                            <Link
-                              href={e.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                            >
-                              <div className="flex items-center gap-1">
-                                <Link2 size={20} />
-                                <span className="text-sm !text-black/75 pt-0.5">
-                                  바로가기
-                                </span>
-                              </div>
-                            </Link>
-                          ) : (
-                            <div className="flex items-center gap-1 text-red-500 cursor-not-allowed opacity-70">
-                              <Link2Off size={20} />
-                              <span className="text-sm pt-0.5">
-                                서비스 종료
-                              </span>
-                            </div>
-                          )}
+                        <div className="flex items-center gap-1 text-red-500 cursor-not-allowed opacity-70">
+                          <Link2Off size={20} />
+                          <span className="text-sm pt-0.5">서비스 종료</span>
                         </div>
                       </div>
-                      <span className="!text-base !text-black/50">
-                        {e.desc}
-                      </span>
                     </div>
-                    <p>{e.descLong}</p>
-
-                    <ul className="flex flex-wrap gap-1">
-                      {e.skills.map((skill) => (
-                        <li key={skill}>
-                          <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
-                            {skill}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {e.tasks.map((task) => (
-                      <div key={task.title} className="flex flex-col gap-4">
-                        <span className="font-bold text-lg lg:text-xl">
-                          &gt; {task.title}
-                        </span>
-                        {task.contents.map((c, i) => (
-                          <p key={i}>{c}</p>
-                        ))}
-                      </div>
-                    ))}
+                    <span className="!text-base !text-black/50">
+                      블록체인 기반 인플루언서 광고 플랫폼
+                    </span>
                   </div>
-                ))}
+                  <p>
+                    주요 기능 리뉴얼과 함께 관리자 페이지 및 채팅 기능을
+                    개선하고 유지보수를 진행했습니다.
+                  </p>
+
+                  <ul className="flex flex-wrap gap-1">
+                    {EXPERIENCE[0].skills.map((skill) => (
+                      <li key={skill}>
+                        <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
+                          {skill}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {EXPERIENCE[0].tasks.map((task) => (
+                    <div key={task.title} className="flex flex-col gap-4">
+                      <span className="font-bold text-lg lg:text-xl">
+                        &gt; {task.title}
+                      </span>
+                      {task.contents.map((c, i) => (
+                        <p key={i}>{c}</p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
+                <div className="flex flex-wrap !min-w-64 items-center lg:items-start justify-center h-full gap-4 w-full lg:w-1/3">
+                  <div className="w-full flex items-center gap-2">
+                    <ZoomIn size={16} className="animate-pulse" />
+                    <span className="text-sm font-light">
+                      이미지를 눌러 확대할 수 있습니다.
+                    </span>
+                  </div>
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/ping_001.gif"}
+                    alt="ping_001"
+                    loading="eager"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/ping_002.gif"}
+                    alt="ping_002"
+                    loading="eager"
+                    width={280}
+                    height={300}
+                  />
+                  <ZoomableImage
+                    zoomable
+                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                    src={"/images/ping_003.webp"}
+                    alt="ping_003"
+                    width={280}
+                    height={300}
+                  />
+                </div>
+                <div className="space-y-8 w-full lg:!w-2/3 ">
+                  <div className="w-full flex flex-col gap-2">
+                    <div className="flex items-center gap-4">
+                      <h5 className="text-2xl lg:text-3xl font-semibold">
+                        BIRDSPING
+                      </h5>
+                      <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-1 text-red-500 cursor-not-allowed opacity-70">
+                          <Link2Off size={20} />
+                          <span className="text-sm pt-0.5">서비스 종료</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="!text-base !text-black/50">
+                      밈코인 프로젝트 랜딩페이지
+                    </span>
+                  </div>
+                  <p>
+                    코인 정보 제공과 외부 거래소 및 커뮤니티로의 유입을 목적으로
+                    하는 랜딩페이지를 주기적으로 리뉴얼하며 UI/UX 개선을
+                    진행했습니다.
+                  </p>
+
+                  <ul className="flex flex-wrap gap-1">
+                    {EXPERIENCE[1].skills.map((skill) => (
+                      <li key={skill}>
+                        <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
+                          {skill}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {EXPERIENCE[1].tasks.map((task) => (
+                    <div key={task.title} className="flex flex-col gap-4">
+                      <span className="font-bold text-lg lg:text-xl">
+                        &gt; {task.title}
+                      </span>
+                      {task.contents.map((c, i) => (
+                        <p key={i}>{c}</p>
+                      ))}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
           {/* 개인 프로젝트 */}
-          <div className=" flex flex-col gap-8 w-full">
+          <div className="flex flex-col gap-8 w-full">
             <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
               개인 프로젝트
             </h3>
@@ -542,7 +598,7 @@ export default function Home() {
               {PROJECT.map((p) => (
                 <div
                   key={p.title}
-                  className="flex flex-col lg:flex-row gap-16 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full"
+                  className="flex flex-col gap-20 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full"
                 >
                   <div className="w-full lg:w-1/3 !min-w-64 flex-grow flex flex-col gap-4 ">
                     <h4 className="text-2xl lg:text-3xl font-semibold">
@@ -593,30 +649,51 @@ export default function Home() {
                       </Link>
                     </div>
                   </div>
-                  <div className="w-full lg:w-2/3 flex flex-col gap-20">
-                    <div className="space-y-8 max-lg:-mt-8">
-                      <p>{p.descLong}</p>
-
-                      <ul className="flex flex-wrap gap-1">
-                        {p.skills.map((skill) => (
-                          <li key={skill}>
-                            <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
-                              {skill}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      {p.tasks.map((task) => (
-                        <div key={task.title} className="flex flex-col gap-4">
-                          <span className="font-bold text-lg lg:text-xl">
-                            &gt; {task.title}
-                          </span>
-                          {task.contents.map((c, i) => (
-                            <p key={i}>{c}</p>
-                          ))}
-                        </div>
+                  <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
+                    <div className="flex flex-wrap items-center !min-w-64 lg:items-start justify-center gap-4 w-full h-full lg:w-1/3 ">
+                      <div className="w-full flex items-center gap-2">
+                        <ZoomIn size={16} className="animate-pulse" />
+                        <span className="text-sm font-light">
+                          이미지를 눌러 확대할 수 있습니다.
+                        </span>
+                      </div>
+                      {p.imgSrc.map((src) => (
+                        <ZoomableImage
+                          key={src}
+                          zoomable
+                          className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+                          src={`/images/${src}`}
+                          alt={src}
+                          width={280}
+                          height={300}
+                        />
                       ))}
+                    </div>
+                    <div className="w-full lg:w-2/3 flex flex-col gap-20 lg:-mt-55">
+                      <div className="space-y-8 max-lg:-mt-8">
+                        <p>{p.descLong}</p>
+
+                        <ul className="flex flex-wrap gap-1">
+                          {p.skills.map((skill) => (
+                            <li key={skill}>
+                              <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
+                                {skill}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        {p.tasks.map((task) => (
+                          <div key={task.title} className="flex flex-col gap-4">
+                            <span className="font-bold text-lg lg:text-xl">
+                              &gt; {task.title}
+                            </span>
+                            {task.contents.map((c, i) => (
+                              <p key={i}>{c}</p>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
