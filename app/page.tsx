@@ -1,4 +1,19 @@
+import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+
+import AntDesignIcon from "@/assets/antdesign.svg";
+import FramerMotionIcon from "@/assets/Motion_Logo_0.svg";
+import NextjsIcon from "@/assets/nextdotjs.svg";
+import PwaIcon from "@/assets/pwa.svg";
+import ReactIcon from "@/assets/react.svg";
+import ReduxIcon from "@/assets/redux.svg";
+import ShadcnuiIcon from "@/assets/shadcnui.svg";
+import SocketIoIcon from "@/assets/socketdotio.svg";
+import SupabaseIcon from "@/assets/supabase.svg";
+import TailwindcssIcon from "@/assets/tailwindcss.svg";
+import TypescriptIcon from "@/assets/typescript.svg";
+import ZustandIcon from "@/assets/zustand.svg";
 
 const EXPERIENCE = [
   {
@@ -468,38 +483,74 @@ export default function Home() {
               기술 스택
             </h3>
             <div className="w-full flex flex-col gap-20 !-mt-2">
-              <ul className=" w-full flex flex-col gap-2 lg:[&_span]:text-xl">
+              <ul className=" w-full flex flex-col gap-2 [&_span]:text-base lg:[&_span]:text-lg [&_span]:flex [&_span]:items-center [&_span]:gap-1">
                 <li className="p-4 flex flex-col lg:flex-row gap-4 lg:gap-10 w-full justify-between ">
                   <h5 className="w-full lg:w-1/3 !min-w-64 flex-grow text-xl lg:text-2xl">
                     핵심 기술
                   </h5>
-                  <div className=" w-full lg:w-2/3 flex flex-wrap gap-2 [&_span]:text-lg">
-                    <span>React</span>
-                    <span>Next.js</span>
-                    <span>TypeScript</span>
+                  <div className=" w-full lg:w-2/3 flex flex-wrap space-x-4 gap-4 ">
+                    <span>
+                      <ReactIcon className="w-5 h-5 fill-[#61DAFB]" />
+                      React
+                    </span>
+                    <span>
+                      <NextjsIcon className="w-5 h-5 fill-[#000000]" />
+                      Next.js
+                    </span>
+                    <span>
+                      <TypescriptIcon className="w-5 h-5 fill-[#3178C6]" />
+                      TypeScript
+                    </span>
                   </div>
                 </li>
                 <li className="p-4 flex flex-col lg:flex-row gap-4 lg:gap-10 w-full justify-between ">
                   <h5 className="w-full lg:w-1/3 !min-w-64 flex-grow text-xl lg:text-2xl">
                     주요 활용 기술
                   </h5>
-                  <div className=" w-full lg:w-2/3 flex flex-wrap gap-2 [&_span]:text-lg">
-                    <span>Zustand</span>
-                    <span>Tailwind CSS</span>
-                    <span>Shadcn/ui</span>
-                    <span>Supabase</span>
+                  <div className=" w-full lg:w-2/3 flex flex-wrap space-x-4 gap-4 ">
+                    <span>
+                      <ZustandIcon className="w-5 h-5 " />
+                      Zustand
+                    </span>
+                    <span>
+                      <TailwindcssIcon className="w-5 h-5 fill-[#06B6D4]" />
+                      Tailwind CSS
+                    </span>
+                    <span>
+                      <ShadcnuiIcon className="w-5 h-5 fill-[#000000]" />
+                      Shadcn/ui
+                    </span>
+                    <span>
+                      <SupabaseIcon className="w-5 h-5 fill-[#3FCF8E]" />
+                      Supabase
+                    </span>
                   </div>
                 </li>
                 <li className="p-4 flex flex-col lg:flex-row gap-4 lg:gap-10 w-full justify-between ">
                   <h5 className="w-full lg:w-1/3 !min-w-64 flex-grow text-xl lg:text-2xl">
                     경험 기술
                   </h5>
-                  <div className=" w-full lg:w-2/3 flex flex-wrap gap-2 [&_span]:text-lg">
-                    <span>React Redux</span>
-                    <span>Ant Design</span>
-                    <span>Framer Motion</span>
-                    <span>Socket.IO</span>
-                    <span>PWA</span>
+                  <div className=" w-full lg:w-2/3 flex flex-wrap space-x-4 gap-4 ">
+                    <span>
+                      <ReduxIcon className="w-5 h-5 fill-[#764ABC]" />
+                      React Redux
+                    </span>
+                    <span>
+                      <AntDesignIcon className="w-5 h-5 fill-[#0170FE]" />
+                      Ant Design
+                    </span>
+                    <span>
+                      <FramerMotionIcon className="w-5 h-5 " />
+                      Framer Motion
+                    </span>
+                    <span>
+                      <SocketIoIcon className="w-5 h-5 fill-[#010101]" />
+                      Socket.IO
+                    </span>
+                    <span>
+                      <PwaIcon className="w-5 h-5 fill-[#5A0FC8]" />
+                      PWA
+                    </span>
                     <span>Web Push</span>
                   </div>
                 </li>
@@ -512,12 +563,20 @@ export default function Home() {
             </h3>
             <ul className="w-full lg:w-2/3 flex flex-col space-y-4">
               <li>
-                <Link href="tel:010-9245-0215" className="text-xl">
+                <Link
+                  href="tel:010-9245-0215"
+                  className="text-xl flex items-center gap-2"
+                >
+                  <Phone size={20} />
                   010-9245-0215
                 </Link>
               </li>
               <li>
-                <Link href="mailto:sis061@naver.com" className="text-xl">
+                <Link
+                  href="mailto:sis061@naver.com"
+                  className="text-xl flex items-center gap-2"
+                >
+                  <Mail size={20} />
                   sis061@naver.com
                 </Link>
               </li>
@@ -526,8 +585,14 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/sis061"
-                  className="text-xl"
+                  className="text-xl flex items-center gap-2"
                 >
+                  <Image
+                    src="/images/github_480.svg"
+                    alt="github logo"
+                    width={20}
+                    height={20}
+                  />
                   Github
                 </Link>
               </li>
