@@ -14,6 +14,7 @@ import SupabaseIcon from "@/assets/supabase.svg";
 import TailwindcssIcon from "@/assets/tailwindcss.svg";
 import TypescriptIcon from "@/assets/typescript.svg";
 import ZustandIcon from "@/assets/zustand.svg";
+import { ZoomableImage } from "@/components/layout/ZoomableImage";
 
 const EXPERIENCE = [
   {
@@ -49,6 +50,14 @@ const EXPERIENCE = [
             조건에 따라 입력 항목이 분기되는 <b>동적 폼 구조를 설계</b>하고 각
             요소를 <b>컴포넌트 단위로 분리하여 재사용</b> 가능하도록
             구현했습니다.
+            <ZoomableImage
+              zoomable
+              className="rounded-md overflow-hidden border border-pilltime-violet/50 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
+              src={"/images/chin_001.webp"}
+              alt="chin_001"
+              width={120}
+              height={120}
+            />
           </>,
           <>
             개발 과정에서는 기획 요구사항이 지속적으로 변경되는 상황이 있었고,
@@ -413,6 +422,7 @@ export default function Home() {
                             href={!!e.link ? e.link : "#"}
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                           >
                             {!!e.link ? (
                               <div className="flex items-center gap-1">
@@ -494,6 +504,7 @@ export default function Home() {
                         href={!!p.link ? p.link : "#"}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                       >
                         {!!p.link ? (
                           <div className="flex items-center gap-1">
@@ -518,7 +529,7 @@ export default function Home() {
                         target="_blank"
                         rel="noopener noreferrer"
                         href={p.github}
-                        className="text-sm flex items-center gap-1"
+                        className="text-sm flex items-center gap-1 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                       >
                         <Image
                           src="/images/github_480.svg"
@@ -648,7 +659,7 @@ export default function Home() {
               <li>
                 <Link
                   href="tel:010-9245-0215"
-                  className="text-xl flex items-center gap-2"
+                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                 >
                   <Phone size={20} />
                   010-9245-0215
@@ -657,7 +668,7 @@ export default function Home() {
               <li>
                 <Link
                   href="mailto:sis061@naver.com"
-                  className="text-xl flex items-center gap-2"
+                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                 >
                   <Mail size={20} />
                   sis061@naver.com
@@ -668,7 +679,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://github.com/sis061"
-                  className="text-xl flex items-center gap-2"
+                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
                 >
                   <Image
                     src="/images/github_480.svg"
