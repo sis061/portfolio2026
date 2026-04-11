@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Link2, Link2Off } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,6 +21,7 @@ const EXPERIENCE = [
     desc: "블록체인 기반 인플루언서 광고 플랫폼",
     descLong:
       "주요 기능 리뉴얼과 함께 관리자 페이지 및 채팅 기능을 개선하고 유지보수를 진행했습니다.",
+    link: null,
     skills: [
       "React",
       "TypeScript",
@@ -102,6 +103,7 @@ const EXPERIENCE = [
     desc: "밈코인 프로젝트 랜딩페이지",
     descLong:
       "코인 정보 제공과 외부 거래소 및 커뮤니티로의 유입을 목적으로 하는 랜딩페이지를 주기적으로 리뉴얼하며 UI/UX 개선을 진행했습니다.",
+    link: null,
     skills: [
       "React",
       "TypeScript",
@@ -155,6 +157,8 @@ const PROJECT = [
     duration: "2025.10 - 2026.03",
     descLong:
       "약 복용 여부를 자주 잊는 문제를 해결하기 위해 실제 사용자를 대상으로 개발한 웹 서비스입니다.",
+    link: "https://ohmypill.vercel.app",
+    github: "https://github.com/sis061/pilltime",
     skills: [
       "React",
       "Next.js",
@@ -226,7 +230,16 @@ const PROJECT = [
         contents: [
           <>
             이후 사용자로부터 더 단순한 형태의 서비스에 대한 요구가 있어,{" "}
-            <b>기능을 경량화</b>한 ‘아맞다밥!’을 별도로 개발했습니다.
+            <b>기능을 경량화</b>한{" "}
+            <Link
+              href={"https://ohmypet.vercel.app"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="!underline !text-[#02C951]"
+            >
+              ‘아맞다밥!’
+            </Link>
+            을 별도로 개발했습니다.
           </>,
           <>
             약 정보 관리와 로그인 구조를 제거하고, 특정 시간대에 식사를 했는지
@@ -256,6 +269,8 @@ const PROJECT = [
     duration: "2025.05 - 현재",
     descLong:
       "아티스트의 디스코그래피 및 다양한 콘텐츠를 한눈에 보여주기 위해 제작한 웹 서비스입니다.",
+    link: "https://grsbh.com",
+    github: "https://github.com/sis061/gasolinerainbow",
     skills: [
       "React",
       "TypeScript",
@@ -389,9 +404,37 @@ export default function Home() {
                 {EXPERIENCE.map((e) => (
                   <div key={e.title} className="space-y-8">
                     <div className="w-full flex flex-col gap-2">
-                      <h5 className="text-2xl lg:text-3xl font-semibold">
-                        {e.title}
-                      </h5>
+                      <div className="flex items-center gap-4">
+                        <h5 className="text-2xl lg:text-3xl font-semibold">
+                          {e.title}
+                        </h5>
+                        <div className="flex items-center gap-4">
+                          <Link
+                            href={!!e.link ? e.link : "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {!!e.link ? (
+                              <div className="flex items-center gap-1">
+                                <Link2 size={20} />
+                                <span className="text-sm !text-black/75 pt-0.5">
+                                  바로가기
+                                </span>
+                              </div>
+                            ) : (
+                              <div className="flex items-center gap-1">
+                                <Link2Off
+                                  size={20}
+                                  className="pointer-events-none"
+                                />
+                                <span className="text-sm !text-red-500 hover:cursor-not-allowed pt-0.5">
+                                  서비스 종료
+                                </span>
+                              </div>
+                            )}
+                          </Link>
+                        </div>
+                      </div>
                       <span className="!text-base !text-black/50">
                         {e.desc}
                       </span>
@@ -401,7 +444,7 @@ export default function Home() {
                     <ul className="flex flex-wrap gap-1">
                       {e.skills.map((skill) => (
                         <li key={skill}>
-                          <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75">
+                          <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
                             {skill}
                           </span>
                         </li>
@@ -446,6 +489,46 @@ export default function Home() {
                         {p.duration}
                       </span>
                     </div>
+                    <div className="flex items-center gap-4">
+                      <Link
+                        href={!!p.link ? p.link : "#"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {!!p.link ? (
+                          <div className="flex items-center gap-1">
+                            <Link2 size={20} />
+                            <span className="text-sm !text-black/75 pt-0.5">
+                              바로가기
+                            </span>
+                          </div>
+                        ) : (
+                          <div className="flex items-center gap-1">
+                            <Link2Off
+                              size={20}
+                              className="pointer-events-none"
+                            />
+                            <span className="text-sm !text-red-500 hover:cursor-not-allowed pt-0.5">
+                              서비스 종료
+                            </span>
+                          </div>
+                        )}
+                      </Link>
+                      <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={p.github}
+                        className="text-sm flex items-center gap-1"
+                      >
+                        <Image
+                          src="/images/github_480.svg"
+                          alt="github logo"
+                          width={20}
+                          height={20}
+                        />
+                        Github
+                      </Link>
+                    </div>
                   </div>
                   <div className="w-full lg:w-2/3 flex flex-col gap-20">
                     <div className="space-y-8 max-lg:-mt-8">
@@ -454,7 +537,7 @@ export default function Home() {
                       <ul className="flex flex-wrap gap-1">
                         {p.skills.map((skill) => (
                           <li key={skill}>
-                            <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75">
+                            <span className="text-base px-2.5 py-1.5 rounded-lg bg-black/5 !text-black/75 shadow-md">
                               {skill}
                             </span>
                           </li>
