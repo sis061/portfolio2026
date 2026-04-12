@@ -7,6 +7,7 @@ import { Mail, Phone } from "lucide-react";
 import { useRef } from "react";
 import { useFooterVisibility } from "@/hooks/useFooterVisibility";
 import FloatingBtn from "./layout/FloatingBtn";
+import ScrollTop from "./layout/ScrollToTop";
 
 export default function Contact() {
   const footerRef = useRef<HTMLDivElement | null>(null);
@@ -15,7 +16,7 @@ export default function Contact() {
   return (
     <div
       ref={footerRef}
-      className="flex flex-col lg:flex-row gap-4 lg:gap-10 w-full items-start"
+      className="flex flex-col lg:flex-row gap-4 lg:gap-10 w-full items-start max-lg:-mt-8"
     >
       <h3 className="text-3xl lg:text-4xl font-bold w-full lg:w-1/3 !min-w-64 flex-grow max-lg:border-b-2 border-black/25 pb-4">
         Contact
@@ -56,6 +57,7 @@ export default function Contact() {
           </Link>
         </li>
       </ul>
+      <ScrollTop isFooterVisible={isFooterVisible} />
       <FloatingBtn isFooterVisible={isFooterVisible} />
     </div>
   );

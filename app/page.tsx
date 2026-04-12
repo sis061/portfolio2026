@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="wrapper">
       <section
-        className={`inner min-h-[calc(100dvh-2.1rem)] text-3xl !mx-auto !w-full h-full !p-2 flex flex-col items-center justify-start mb-8`}
+        className={`inner min-h-[calc(100dvh-2.1rem)] text-3xl !mx-auto !w-full h-full !p-2 flex flex-col items-center justify-start mb-12`}
       >
         <div className={`p-4 flex flex-col gap-28 w-full`}>
           {/************************** HERO SECTION **************************/}
@@ -81,7 +81,10 @@ export default function Home() {
                   })}
                 </div>
 
-                <div className="space-y-8 w-full lg:!w-2/3 lg:-mt-59.5">
+                <div
+                  id="chin"
+                  className="space-y-8 w-full lg:!w-2/3 -mt-16 lg:-mt-59.5"
+                >
                   <div className="w-full flex flex-col gap-2">
                     <div className="flex items-center gap-4">
                       <h5 className="text-2xl lg:text-3xl font-semibold">
@@ -126,7 +129,10 @@ export default function Home() {
                 </div>
               </div>
               {/************************** 버드핑 **************************/}
-              <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
+              <div
+                id="birdsping"
+                className="w-full flex flex-col-reverse lg:flex-row gap-16 "
+              >
                 <div className="flex flex-wrap !min-w-64 items-center lg:items-start justify-center h-full gap-4 w-full lg:w-1/3">
                   <div className="w-full flex items-center gap-2">
                     <ZoomIn size={16} className="animate-pulse" />
@@ -214,8 +220,9 @@ export default function Home() {
               개인 프로젝트
             </h3>
             <div className="w-full flex flex-col gap-28 !-mt-2">
-              {PROJECT.map((p) => (
+              {PROJECT.map((p, i) => (
                 <div
+                  id={`project-${i + 1}`}
                   key={p.title}
                   className="flex flex-col gap-20 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full"
                 >
@@ -325,7 +332,7 @@ export default function Home() {
             </div>
           </div>
           {/************************** 기술 스택 **************************/}
-          <div className=" flex flex-col gap-8 w-full">
+          <div className=" flex flex-col gap-8 w-full ">
             <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
               기술 스택
             </h3>
