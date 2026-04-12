@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Mail, Phone, Link2, Link2Off, ZoomIn } from "lucide-react";
+import { Link2, Link2Off, ZoomIn } from "lucide-react";
 import { ZoomableImage } from "@/components/layout/ZoomableImage";
+import Contact from "@/components/Contact";
 
 import { EXPERIENCE, PROJECT } from "@/assets/projectData";
 import { ICONS } from "@/assets/icons";
@@ -34,12 +35,12 @@ export default function Home() {
           </div>
 
           {/************************** 개발 경력 **************************/}
-          <div className="flex flex-col gap-8 w-full">
+          <div className="flex flex-col gap-8 w-full ">
             <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
               개발 경력
             </h3>
 
-            <div className="flex flex-col gap-20 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full !-mt-2">
+            <div className="flex flex-col gap-28 [&_p]:text-lg lg:[&_p]:text-xl [&_p]:!font-light w-full !-mt-2">
               <div className="w-full lg:w-1/3 !min-w-64 flex-grow flex flex-col gap-4 ">
                 <h4 className="text-2xl lg:text-3xl font-semibold">
                   (주) CIC커뮤니티
@@ -80,7 +81,7 @@ export default function Home() {
                   })}
                 </div>
 
-                <div className="space-y-8 w-full lg:!w-2/3 lg:-mt-51.5">
+                <div className="space-y-8 w-full lg:!w-2/3 lg:-mt-59.5">
                   <div className="w-full flex flex-col gap-2">
                     <div className="flex items-center gap-4">
                       <h5 className="text-2xl lg:text-3xl font-semibold">
@@ -212,7 +213,7 @@ export default function Home() {
             <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
               개인 프로젝트
             </h3>
-            <div className="w-full flex flex-col gap-20 !-mt-2">
+            <div className="w-full flex flex-col gap-28 !-mt-2">
               {PROJECT.map((p) => (
                 <div
                   key={p.title}
@@ -404,47 +405,7 @@ export default function Home() {
             </div>
           </div>
           {/************************** Contact **************************/}
-          <div className="flex flex-col lg:flex-row gap-4 lg:gap-10 w-full items-start ">
-            <h3 className="text-3xl lg:text-4xl font-bold w-full lg:w-1/3 !min-w-64 flex-grow max-lg:border-b-2 border-black/25 pb-4">
-              Contact
-            </h3>
-            <ul className="w-full lg:w-2/3 flex flex-col space-y-4">
-              <li>
-                <Link
-                  href="tel:010-9245-0215"
-                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                >
-                  <Phone size={20} />
-                  010-9245-0215
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="mailto:sis061@naver.com"
-                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                >
-                  <Mail size={20} />
-                  sis061@naver.com
-                </Link>
-              </li>
-              <li>
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/sis061"
-                  className="text-xl flex items-center gap-2 transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95"
-                >
-                  <Image
-                    src="/images/github_480.svg"
-                    alt="github logo"
-                    width={20}
-                    height={20}
-                  />
-                  Github
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <Contact />
         </div>
       </section>
     </main>
