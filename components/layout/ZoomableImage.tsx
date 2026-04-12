@@ -1,16 +1,16 @@
 "use client";
 
 // ---- REACT
-import { useEffect, useMemo, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 
 // ---- NEXT
 import dynamic from "next/dynamic";
 import Image, { StaticImageData } from "next/image";
+import { Skeleton } from "../ui/skeleton";
 
 // ---- COMPONENT
 //  모달용 컴포넌트만 framer-motion과 함께 동적 로드
-// import SmartImage, { SmartImageProps } from "./SmartImage";
 const MotionOverlay = dynamic(
   () => import("./MotionOverlay").then((m) => m.MotionOverlay),
   { ssr: false },
@@ -24,7 +24,7 @@ type ZoomableImageProps = {
   width?: number;
   height?: number;
   loading?: "eager" | "lazy";
-  onError?: () => void;
+  onError?: (e: SyntheticEvent<HTMLImageElement, Event>) => void;
 };
 
 export function ZoomableImage({
@@ -38,7 +38,7 @@ export function ZoomableImage({
   loading = "lazy",
   ...rest
 }: ZoomableImageProps) {
-  // const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -49,13 +49,13 @@ export function ZoomableImage({
 
   useEffect(() => setMounted(true), []);
 
-  // if (hasError) {
-  //   return (
-  //     <Skeleton
-  //       className={`w-full h-full rounded-none bg-[#333] ${className ?? ""}`}
-  //     />
-  //   );
-  // }
+  if (hasError) {
+    return (
+      <Skeleton
+        className={`w-full h-full rounded-none bg-[#333] ${className ?? ""}`}
+      />
+    );
+  }
 
   return (
     <>
@@ -66,10 +66,10 @@ export function ZoomableImage({
         height={height}
         loading={loading}
         onClick={() => zoomable && setIsZoomed(true)}
-        // onError={(e) => {
-        //   setHasError(true);
-        //   onError?.(e);
-        // }}
+        onError={(e) => {
+          setHasError(true);
+          onError?.(e);
+        }}
         className={`${zoomable ? "cursor-zoom-in" : ""} ${className ?? ""} `}
         {...rest}
       />
