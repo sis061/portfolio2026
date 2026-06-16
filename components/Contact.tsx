@@ -18,7 +18,7 @@ export default function Contact() {
       ref={footerRef}
       className="flex flex-col lg:flex-row gap-4 lg:gap-10 w-full items-start max-lg:-mt-8"
     >
-      <h3 className="text-3xl lg:text-4xl font-bold w-full lg:w-1/3 !min-w-64 flex-grow max-lg:border-b-2 border-black/25 pb-4">
+      <h3 className="text-3xl lg:text-4xl font-bold w-full lg:w-1/3 !min-w-64 flex-grow max-lg:border-b-2 border-black/25 pb-4 !text-blue-500">
         Contact
       </h3>
       <ul className="w-full lg:w-2/3 flex flex-col space-y-4">
@@ -57,8 +57,8 @@ export default function Contact() {
           </Link>
         </li>
       </ul>
-      {/* <ScrollTop isFooterVisible={isFooterVisible} /> */}
-      {/* <FloatingBtn isFooterVisible={isFooterVisible} /> */}
+      <ScrollTop isFooterVisible={isFooterVisible} />
+      <FloatingBtn isFooterVisible={isFooterVisible} />
     </div>
   );
 }

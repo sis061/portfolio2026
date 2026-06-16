@@ -15,6 +15,13 @@ export const EXPERIENCE = [
       "Horizon UI",
       "Socket.IO",
     ],
+    imgSrc: [
+      "chin_001.webp",
+      "chin_002.webp",
+      "chin_003.webp",
+      "chin_004.webp",
+      "chin_005.webp",
+    ],
     tasks: [
       {
         title: "'미션' 리뉴얼 프로젝트",
@@ -93,6 +100,7 @@ export const EXPERIENCE = [
       "Framer Motion",
       "Ant Design",
     ],
+    imgSrc: ["ping_001.gif", "ping_002.gif", "ping_003.webp"],
     tasks: [
       {
         title: "인터랙션 중심 UI 구현",

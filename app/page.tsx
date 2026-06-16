@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Link2, Link2Off, ZoomIn } from "lucide-react";
-import { ZoomableImage } from "@/components/layout/ZoomableImage";
+import { Link2, Link2Off } from "lucide-react";
 import Contact from "@/components/Contact";
 
 import { EXPERIENCE, PROJECT } from "@/assets/projectData";
 import { ICONS } from "@/assets/icons";
+import ImageExpander from "@/components/layout/ImageExpander";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
               <h1>흐름을 만드는 프론트엔드 개발자,</h1>
               <h1>정성우입니다.</h1>
             </div>
-            <div className="[&_>h2]:text-xl lg:[&_>h2]:text-2xl flex flex-col">
+            <div className="[&_>h2]:text-xl lg:[&_>h2]:text-2xl flex flex-col gap-2">
               <h2>
                 고객의 요구사항을 한 줄기로 엮어 끊기지 않는 화면으로
                 만들어냅니다.
@@ -36,7 +36,7 @@ export default function Home() {
 
           {/************************** 개발 경력 **************************/}
           <div className="flex flex-col gap-8 w-full ">
-            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
+            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4 !text-blue-500">
               개발 경력
             </h3>
 
@@ -57,30 +57,7 @@ export default function Home() {
               </div>
               {/************************** 채널 in **************************/}
               <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
-                <div className="flex flex-wrap items-center !min-w-64 lg:items-start justify-center gap-4 w-full h-full lg:w-1/3 ">
-                  <div className="w-full flex items-center gap-2">
-                    <ZoomIn size={16} className="animate-pulse" />
-                    <span className="text-sm font-light">
-                      이미지를 눌러 확대할 수 있습니다.
-                    </span>
-                  </div>
-                  {Array.from({ length: 5 }, (_, i) => {
-                    const index = i + 1;
-                    return (
-                      <ZoomableImage
-                        key={index}
-                        zoomable
-                        className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95 w-auto"
-                        src={`/images/chin_00${index}.webp`}
-                        alt={`chin_00${index}`}
-                        width={280}
-                        height={300}
-                        loading="eager"
-                      />
-                    );
-                  })}
-                </div>
-
+                <ImageExpander imgSrc={EXPERIENCE[0].imgSrc} loading="eager" />
                 <div
                   id="chin"
                   className="space-y-8 w-full lg:!w-2/3 -mt-16 lg:-mt-59.5"
@@ -133,40 +110,7 @@ export default function Home() {
                 id="birdsping"
                 className="w-full flex flex-col-reverse lg:flex-row gap-16 "
               >
-                <div className="flex flex-wrap !min-w-64 items-center lg:items-start justify-center h-full gap-4 w-full lg:w-1/3">
-                  <div className="w-full flex items-center gap-2">
-                    <ZoomIn size={16} className="animate-pulse" />
-                    <span className="text-sm font-light">
-                      이미지를 눌러 확대할 수 있습니다.
-                    </span>
-                  </div>
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/ping_001.gif"}
-                    alt="ping_001"
-                    loading="eager"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/ping_002.gif"}
-                    alt="ping_002"
-                    loading="eager"
-                    width={280}
-                    height={300}
-                  />
-                  <ZoomableImage
-                    zoomable
-                    className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                    src={"/images/ping_003.webp"}
-                    alt="ping_003"
-                    width={280}
-                    height={300}
-                  />
-                </div>
+                <ImageExpander imgSrc={EXPERIENCE[1].imgSrc} loading="eager" />
                 <div className="space-y-8 w-full lg:!w-2/3 ">
                   <div className="w-full flex flex-col gap-2">
                     <div className="flex items-center gap-4">
@@ -216,7 +160,7 @@ export default function Home() {
           </div>
           {/************************** 개인 프로젝트 **************************/}
           <div className="flex flex-col gap-8 w-full">
-            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
+            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4 !text-blue-500">
               개인 프로젝트
             </h3>
             <div className="w-full flex flex-col gap-28 !-mt-2">
@@ -280,26 +224,8 @@ export default function Home() {
                       </Link>
                     </div>
                   </div>
-                  <div className="w-full flex flex-col-reverse lg:flex-row gap-16 ">
-                    <div className="flex flex-wrap items-center !min-w-64 lg:items-start justify-center gap-4 w-full h-full lg:w-1/3 ">
-                      <div className="w-full flex items-center gap-2">
-                        <ZoomIn size={16} className="animate-pulse" />
-                        <span className="text-sm font-light">
-                          이미지를 눌러 확대할 수 있습니다.
-                        </span>
-                      </div>
-                      {p.imgSrc.map((src) => (
-                        <ZoomableImage
-                          key={src}
-                          zoomable
-                          className="rounded-md overflow-hidden border border-black/25 shadow-sm transition-transform duration-200 ease-in-out scale-100 touch-manipulation active:scale-95 hover:scale-95"
-                          src={`/images/${src}`}
-                          alt={src}
-                          width={280}
-                          height={300}
-                        />
-                      ))}
-                    </div>
+                  <div className="w-full flex flex-col-reverse lg:flex-row gap-16">
+                    <ImageExpander imgSrc={p.imgSrc} />
                     <div className="w-full lg:w-2/3 flex flex-col gap-20 lg:-mt-55">
                       <div className="space-y-8 max-lg:-mt-8">
                         <p>{p.descLong}</p>
@@ -333,7 +259,7 @@ export default function Home() {
           </div>
           {/************************** 기술 스택 **************************/}
           <div className=" flex flex-col gap-8 w-full ">
-            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4">
+            <h3 className="text-3xl lg:text-4xl font-bold border-b-2 border-black/25 pb-4 !text-blue-500">
               기술 스택
             </h3>
             <div className="w-full flex flex-col gap-20 !-mt-2">
