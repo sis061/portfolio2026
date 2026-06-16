@@ -57,8 +57,8 @@ export default function Contact() {
           </Link>
         </li>
       </ul>
-      <ScrollTop isFooterVisible={isFooterVisible} />
-      <FloatingBtn isFooterVisible={isFooterVisible} />
+      {/* <ScrollTop isFooterVisible={isFooterVisible} /> */}
+      {/* <FloatingBtn isFooterVisible={isFooterVisible} /> */}
     </div>
   );
 }

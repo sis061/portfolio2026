@@ -28,7 +28,7 @@ export default function Home() {
                 만들어냅니다.
               </h2>
               <h2 className="pr-4">
-                다양한 경험에서의 소통을 바탕으로, 서로 다른 생각과 조건을
+                다양한 경험에서 쌓은 소통을 바탕으로, 서로 다른 생각과 조건을
                 조율해 하나의 결과로 이어냅니다.
               </h2>
             </div>
@@ -103,7 +103,7 @@ export default function Home() {
                   </div>
                   <p>
                     주요 기능 리뉴얼과 함께 관리자 페이지 및 채팅 기능을
-                    개선하고 유지보수를 진행했습니다.
+                    개선하고 유지보수를 맡았습니다.
                   </p>
 
                   <ul className="flex flex-wrap gap-1">
@@ -186,8 +186,8 @@ export default function Home() {
                   </div>
                   <p>
                     코인 정보 제공과 외부 거래소 및 커뮤니티로의 유입을 목적으로
-                    하는 랜딩페이지를 주기적으로 리뉴얼하며 UI/UX 개선을
-                    진행했습니다.
+                    하는 랜딩페이지를 주기적으로 리뉴얼하며 UI/UX를
+                    개선했습니다.
                   </p>
 
                   <ul className="flex flex-wrap gap-1">
