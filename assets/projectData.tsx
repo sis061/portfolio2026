@@ -145,8 +145,8 @@ export const PROJECT = [
     desc: "대전 지하철 1호선 도착 정보 웹앱",
     duration: "2026.06.17 - 2026.06.22",
     descLong:
-      "기존 CRA 기반 MVP를 Next.js App Router로 리빌딩하며, 공공데이터 API 호출량 제한과 모바일 사용성을 고려해 다음 열차 정보를 빠르게 확인할 수 있도록 재설계한 웹앱입니다.",
-    link: "https://daejeon-subway-arrival.vercel.app/",
+      "기존 CRA 기반 MVP를 Next.js App Router로 리빌딩하며, 분리되어 있던 API 중계와 화면 흐름을 정리하고 공공데이터/지도 API 연동과 빠른 탐색 UX를 중심으로 재설계한 웹앱입니다.",
+    link: "https://daejeon-subway-arrival.vercel.app/stations/112",
     github: "https://github.com/sis061/daejeon_subway_renewal",
     imgSrc: [
       "subway_arrival_001.webp",
