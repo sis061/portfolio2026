@@ -141,6 +141,106 @@ export const EXPERIENCE = [
 
 export const PROJECT = [
   {
+    title: "대전 지하철 NOW! v2",
+    desc: "대전 지하철 1호선 도착 정보 웹앱",
+    duration: "2026.06.17 - 2026.06.22",
+    descLong:
+      "기존 CRA 기반 MVP를 Next.js App Router로 리빌딩하며, 분리되어 있던 API 중계와 화면 흐름을 정리하고 공공데이터/지도 API 연동과 빠른 탐색 UX를 중심으로 재설계한 웹앱입니다.",
+    link: "https://daejeon-subway-arrival.vercel.app/stations/112",
+    github: "https://github.com/sis061/daejeon_subway_renewal",
+    imgSrc: [
+      "subway_arrival_001.webp",
+      "subway_arrival_002.webp",
+      "subway_arrival_003.webp",
+      "subway_arrival_004.webp",
+    ],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "공공데이터포털 API",
+      "Kakao Maps API",
+      "Zustand",
+      "TailwindCSS",
+      "Shadcn/ui",
+      "Codex",
+      "Vercel",
+    ],
+    tasks: [
+      {
+        title: "문제 정의 및 리뉴얼 방향 설계",
+        contents: [
+          <>
+            기존 버전은 CRA 기반 SPA와 별도 Express 프록시 서버로 구성되어 있어,
+            화면과 API 중계 로직을 따로 관리해야 했습니다. 역을 이동할 때마다
+            화면 흐름이 끊겼고, 기능을 확장하기에는 단순한 도착정보 화면에
+            가까운 구조였습니다.
+          </>,
+          <>
+            <b>Next.js App Router</b> 기반으로 리뉴얼하며 화면과 API 중계, 캐싱
+            흐름을 한 프로젝트 안에서 관리하도록 구조를 다시 잡았습니다. 단순히
+            프레임워크를 바꾸는 것이 아니라, 제한된 API 호출량과 빠른 교통정보
+            UX를 함께 고려한 서비스 구조로 재설계하는 것을 목표로 했습니다.
+          </>,
+        ],
+      },
+      {
+        title: "공공데이터/지도 API 연동 및 캐싱",
+        contents: [
+          <>
+            <a href="https://www.data.go.kr/index.do" target="_blank">
+              <b className="hover:!text-blue-500 active:!text-blue-500 ease-in-out duration-200 transition-colors">
+                공공데이터포털
+              </b>
+            </a>
+            의 열차 시간표, 공휴일, 역 상세정보 API를 연동했습니다. API 호출량이
+            제한되어 있었기 때문에 전체 시간표는 <b>서버에서 캐싱</b>하고, 역
+            상세정보는 사용자가 Drawer를 열었을 때만 요청하도록 분리했습니다.
+            또한 <b>Kakao Maps SDK</b>로 지도 렌더링을 구현하고,{" "}
+            <b>Kakao 주소 검색 API</b>로 역 주소를 좌표로 변환한 뒤, 좌표 결과를
+            서버에서 캐싱해 같은 주소에 대한 반복 요청을 줄였습니다.
+          </>,
+        ],
+      },
+      {
+        title: "시간표 데이터 정규화와 도착 예정 계산",
+        contents: [
+          <>
+            공공데이터의 시간표는 한 시간대에 여러 분 단위 출발 시각이 문자열로
+            묶여 있어, 앱에서 바로 “다음 열차 한 대”를 찾기 어려웠습니다. 이를
+            역 &gt; 운행일 &gt; 방향 기준으로 다시 묶은 후, 각 출발 시각을 열차
+            한 대 단위의 데이터로 변환했습니다.
+          </>,
+          <>
+            정규화한 데이터를 바탕으로 현재 시각 기준 다음 열차를 계산했습니다.
+            '공휴일, 막차, 운행 종료, 자정 이후 열차' 같은 예외 상황도 별도
+            정책으로 처리했습니다.
+          </>,
+        ],
+      },
+      {
+        title: "빠른 탐색 UX와 품질 개선",
+        contents: [
+          <>
+            전체 22개 역을 항상 탐색할 수 있도록 세로형 노선도를 오른쪽에
+            고정하고, 선택한 역의 도착정보는 왼쪽 패널에서 바로 확인할 수 있게
+            구성했습니다. <b>Parallel Routes</b>로 노선도와 상세 영역을 분리해,
+            역을 이동해도 탐색 맥락이 유지되도록 했습니다.
+          </>,
+          <>
+            시간표와 역 상세정보는 <b>shadcn/ui의 Drawer</b>로 분리/확장했고,
+            자주 확인하는 역은 <b>Zustand persist</b>로 저장해 다음 방문 때도
+            바로 접근할 수 있도록 했습니다.
+          </>,
+          <>
+            구현 과정에서는 <b>Codex</b>를 코드 리뷰와 QA 보조 도구로 활용해 API
+            실패 케이스와 스크린 리더 접근성 문구를 빠르게 점검했습니다.
+          </>,
+        ],
+      },
+    ],
+  },
+  {
     title: "아맞다약! / 아맞다밥!",
     desc: "개인화 건강 관리 서비스",
     duration: "2025.10 - 2026.03",

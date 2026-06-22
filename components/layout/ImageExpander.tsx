@@ -104,7 +104,7 @@ export default function ImageExpander({
                 top: expanded ? 0 : foldedTop,
                 rotate: expanded ? 0 : -4 + i * 2,
                 scale: expanded ? 1 : 0.96,
-                zIndex: expanded ? imgSrc.length - i : i,
+                zIndex: expanded ? i : imgSrc.length - i,
               }}
               transition={{
                 type: "spring",
