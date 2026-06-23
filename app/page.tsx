@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Link2, Link2Off } from "lucide-react";
 import Contact from "@/components/Contact";
 
-import { EXPERIENCE, PROJECT } from "@/assets/projectData";
+import { EXPERIENCE, PROJECT } from "@/data/projectData";
 import { ICONS } from "@/assets/icons";
 import ImageExpander from "@/components/layout/ImageExpander";
 

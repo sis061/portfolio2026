@@ -73,7 +73,7 @@ export default function FloatingBtn({
                 }}
                 className="flex flex-col space-y-3"
               >
-                <h3 className="text-xl font-bold">Sections</h3>
+                <h3 className="text-xl font-bold !text-blue-500">Sections</h3>
                 <div className="flex flex-col gap-1">
                   <a
                     href="#chin"
@@ -106,10 +106,21 @@ export default function FloatingBtn({
                       }, 50)
                     }
                   >
-                    - 아맞다약! / 아맞다밥!
+                    - 대전 지하철 NOW! v2
                   </a>
                   <a
                     href="#project-2"
+                    className="text-base transition-all hover:translate-x-2 active:scale-95"
+                    onClick={() =>
+                      setTimeout(() => {
+                        setOpen(false);
+                      }, 50)
+                    }
+                  >
+                    - 아맞다약! / 아맞다밥!
+                  </a>
+                  <a
+                    href="#project-3"
                     className="text-base transition-all hover:translate-x-2 active:scale-95"
                     onClick={() =>
                       setTimeout(() => {
@@ -133,7 +144,9 @@ export default function FloatingBtn({
                     }}
                     className="flex flex-col space-y-3"
                   >
-                    <h3 className="text-xl font-bold">Contact</h3>
+                    <h3 className="text-xl font-bold !text-blue-500">
+                      Contact
+                    </h3>
                     <ul className="w-full flex flex-col space-y-2 ">
                       <li>
                         <Link
